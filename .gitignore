@@ -3,3 +3,7 @@ django/todoapi/__pycache__/
 django/migrations/__pycache__/
 django/todoproj/__pycache__/
 django/db.sqlite3
+django/uploads/
+django/todoapi/__pycache__/models.cpython-38.pyc
+django/todoapi/__pycache__/serializers.cpython-38.pyc
+django/todoapi/__pycache__/views.cpython-38.pyc

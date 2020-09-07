@@ -16,8 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from todoapi import views as todoapi_views
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/task/', todoapi_views.TaskList.as_view(), name='task-list'),
-]
+    path('api/task/<int:task_id>/', todoapi_views.TaskDetail.as_view(), name='task-detail'),
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

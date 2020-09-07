@@ -1,5 +1,7 @@
 from django.db import models
 from datetime import date
+from django.db.models.signals import pre_delete
+from django.dispatch.dispatcher import receiver
 
 # Create the Task class to describe the model.
 class Task(models.Model):
@@ -25,3 +27,7 @@ class Task(models.Model):
     # Define what to output when the model is printed as a string.
     def __str__(self):
         return self.title
+
+@receiver(pre_delete, sender=Task)
+def picture_delete(sender, instance, **kwargs):
+    instance.attachment.delete(False)
