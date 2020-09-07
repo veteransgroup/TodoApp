@@ -6,6 +6,7 @@ class Task(models.Model):
     """Stores a task."""
     title = models.CharField(max_length=50)
     content = models.CharField(max_length=50)
+    attachment = models.FileField(blank=True, null=True, upload_to='%Y/%m/')
 
     # Date the task was created.
     created_on = models.DateField(default=date.today)
