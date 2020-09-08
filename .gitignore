@@ -7,3 +7,5 @@ django/uploads/
 django/todoapi/__pycache__/models.cpython-38.pyc
 django/todoapi/__pycache__/serializers.cpython-38.pyc
 django/todoapi/__pycache__/views.cpython-38.pyc
+django/todoapi/migrations/__pycache__/0001_initial.cpython-38.pyc
+django/todoapi/migrations/__pycache__/0002_dummy_tasks.cpython-38.pyc
