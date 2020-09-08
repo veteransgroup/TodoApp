@@ -1,0 +1,4 @@
+.gitignore
+angular
+django
+django/uploads
