@@ -27,17 +27,17 @@ class TaskViewSet(viewsets.ModelViewSet):
     queryset = Task.objects.all()
     serializer_class = TaskSerializer
 
-    def perform_create(self, serializer, format=None):
-        attachment = self.request.data.get('attachment', False)
-        if attachment:
-            serializer.save(
-                title=serializer.validated_data.get('title'),
-                content=serializer.validated_data.get('content'),
-                attachment=attachment
-            )
-        else:
-            serializer.save(
-                title=serializer.validated_data.get('title'),
-                content=serializer.validated_data.get('content')
-            )
+    # def perform_create(self, serializer, format=None):
+    #     attachment = self.request.data.get('attachment', False)
+    #     if attachment:
+    #         serializer.save(
+    #             title=serializer.validated_data.get('title'),
+    #             content=serializer.validated_data.get('content'),
+    #             attachment=attachment
+    #         )
+    #     else:
+    #         serializer.save(
+    #             title=serializer.validated_data.get('title'),
+    #             content=serializer.validated_data.get('content')
+    #         )
         

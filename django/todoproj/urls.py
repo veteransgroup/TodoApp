@@ -28,4 +28,6 @@ urlpatterns = [
     path('', include(router.urls)),
     # path('api/task/', todoapi_views.TaskList.as_view(), name='task-list'),
     # path('api/task/<int:task_id>/', todoapi_views.TaskDetail.as_view(), name='task-detail'),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+] 
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
