@@ -49,12 +49,32 @@ export class TaskListComponent implements OnInit {
         console.log(err);
       }
     );
-    
+    // reset the Form
+    this.task_form.reset();
   }
   onChange(event) {
     if (event.target.files.length>0){
       const file = event.target.files[0];
       this.task_form.get('attachment').setValue(file);
     }    
+  }
+
+  deleteTask(task_id: number) {
+    this.apiService.deleteTask(task_id).subscribe(
+      (res) => {
+        console.log(res);
+        this.getTasks();
+      }
+    )
+  }
+
+  updateTask(task: Task) {
+    this.apiService.putTask(task)
+      .subscribe(
+        (response) => {
+          console.log(response);
+          this.getTasks();
+        }
+      )
   }
 }

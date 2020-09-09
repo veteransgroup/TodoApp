@@ -2,18 +2,29 @@
 
 <ul>
     <li *ngFor="let task of tasks$ | async">
-        <ul>
-            <li>Title: {{ task.title }}</li>
-            <li>Content: {{ task.content }}</li>
-            <li>Attachment: {{ task.attachment }}</li>
-            <li>Due Date: {{ task.due_date }}</li>
-        </ul>
+  
+      <form (ngSubmit)="updateTask(task)">
+  
+        Title: <input type="text" name="title" [(ngModel)]="task.title" [disabled]="!task.isEditable" />
+        <br>
+  
+        Content: <input type="text" name="content" [(ngModel)]="task.content" [disabled]="!task.isEditable" />
+        <br>
+  
+        Due Date: <input type="text" name="due_date" [(ngModel)]="task.due_date" [disabled]="!task.isEditable" />
+        <br>
+  
+        <button *ngIf="!task.isEditable" (click)="task.isEditable=!task.isEditable">Edit</button>
+        <button type="submit" *ngIf="task.isEditable">Save</button>
+        <button type="button" (click)=deleteTask(task.id)>Delete</button>
+      </form>
+  
     </li>
-</ul>
+  </ul>
 
-<div *ngIf="response && imageURL">
+<!-- <div *ngIf="response && imageURL">
     <img [src]='imageURL' />
-</div>
+</div> -->
 
 <h2>Create a Task</h2>
 <form [formGroup]="task_form" (ngSubmit)="onSubmit()">
@@ -25,5 +36,5 @@
     <br>
     <label for="attachment">Attachment</label>
     <input type="file" id="attachment" name="attachment" formControlName="attachment" (change)="onChange($event)">
-    <button type="submit" >Add Task</button>
+    <button type="submit" [disabled]="task_form.invalid">Add Task</button>
 </form>
