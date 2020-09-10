@@ -1,13 +1,17 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { TaskListComponent } from './task-list/task-list.component';
+import { AuthGuard } from './auth/auth.guard';
+import { CallbackComponent } from './callback/callback.component';
 
 const routes: Routes = [
-  {path: 'tasks', component: TaskListComponent}
+  {path: 'tasks', component: TaskListComponent, canActivate: [AuthGuard]},
+  {path: 'callback', component: CallbackComponent},
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  providers: [AuthGuard]
 })
 export class AppRoutingModule { }
