@@ -16,13 +16,15 @@ class Task(models.Model):
     # Due date.
     due_date = models.DateField(default=date.today)
 
+    created_by = models.CharField(max_length=100)
+
     # Meta data about the database table.
     class Meta:
         # Set the table name.
         db_table = 'task'
 
         # Set default ordering
-        ordering = ['id']
+        ordering = ['-id']
 
     # Define what to output when the model is printed as a string.
     def __str__(self):
