@@ -4,12 +4,13 @@ import { Observable } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
 import { Task } from './task';
 import { AuthService } from './auth/auth.service';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApiService {
-  API_URL = 'http://localhost/api/task/';
+  API_URL = environment.apiUrl;
   constructor(private http: HttpClient, private auth: AuthService) { }
   public getTasks(): Observable<Task[]> {
     return this.http.get<Task[]>(this.API_URL, {

@@ -14,4 +14,6 @@ WORKDIR /code
 
 COPY . /code/
 
-EXPOSE 80
+EXPOSE 8080
+
+CMD ["uwsgi", "--http", ":8080", "--ini", "./uwsgi/uwsgi.ini"]

@@ -4,6 +4,7 @@
 
 export const environment = {
   production: false,
+  apiUrl: 'http://localhost/api/task/',
   auth: {
     clientID: 'hfSCrVCJSNY2QexJamnm4XiDlHIcxNbk',
     domain: 'jeffliu.au.auth0.com', // e.g., you.auth0.com
