@@ -1,5 +1,5 @@
 export const environment = {
-  production: false,
+  production: true,
   apiUrl: 'http://localhost/api/task/',   // need change to domain or IP address
   auth: {
     clientID: 'hfSCrVCJSNY2QexJamnm4XiDlHIcxNbk',
