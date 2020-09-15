@@ -73,6 +73,9 @@ REST_FRAMEWORK = {
     ),
 }
 
+CSRF_COOKIE_SECURE = False
+SESSION_COOKIE_SECURE = False
+
 ROOT_URLCONF = 'todoproj.urls'
 
 TEMPLATES = [
