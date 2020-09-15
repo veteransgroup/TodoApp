@@ -1,4 +1,7 @@
 .gitignore
 angular
-django
 django/uploads
+django/db.sqlite3
+django/todoapi/__pycache__
+django/todoapi/migrations
+django/todoproj/__pycache__

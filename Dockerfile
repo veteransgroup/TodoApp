@@ -16,4 +16,4 @@ COPY . /code/
 
 EXPOSE 8080
 
-CMD ["uwsgi", "--http", ":8080", "--ini", "./django/django/uwsgi/uwsgi.ini"]
+CMD ["uwsgi", "--http", ":8080", "--ini", "./django/uwsgi/uwsgi.ini"]
