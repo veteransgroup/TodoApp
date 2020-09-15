@@ -3,5 +3,5 @@ angular
 django/uploads
 django/db.sqlite3
 django/todoapi/__pycache__
-django/todoapi/migrations
+django/todoapi/migrations/__pycache__
 django/todoproj/__pycache__

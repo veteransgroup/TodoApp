@@ -1,6 +1,6 @@
 django/todoapi/__pycache__/views.cpython-38.pyc
 django/todoapi/__pycache__/
-django/todoapi/migrations/*
+django/todoapi/migrations/__pycache__/
 django/todoproj/__pycache__/
 django/db.sqlite3
 django/uploads/
