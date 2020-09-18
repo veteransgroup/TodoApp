@@ -102,7 +102,7 @@ WSGI_APPLICATION = 'todoproj.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'ENGINE': 'django.db.backends.postgresql',
         'NAME': os.environ['DB_NAME_DJANGO'],
         'USER': os.environ['DB_USER_DJANGO'],
         'PASSWORD': os.environ['DB_PASSWORD_DJANGO'],
